@@ -14,13 +14,15 @@ Quarto extension for a masters or PhD thesis based on Masters/Doctoral Thesis, L
 
 ## Installing the extension
 
-You will need to do this to get all the folders with tex files.
+You will need to do this to get all the folders with tex files. Start in the directory where you will create the directory that will contain your thesis files. Run this from a terminal in that directory.
 
 ```bash
 quarto use template nmfs-opensci/quarto-thesis
 ```
 
-Once you do that you can render from within the folder.
+It will ask for an empty directory name where to put the files, give it a new directory name.
+
+Once you do that you can cd to the new directory and render from within the directory.
 
 ```bash
 quarto render
