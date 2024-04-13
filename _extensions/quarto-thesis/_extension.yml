@@ -1,11 +1,12 @@
 title: quarto-thesis
 author: Eli Holmes
 version: 0.2.5
+
 contributes:
   format:
     pdf:
       documentclass: MastersDoctoralThesis
-      classoption: ["11pt", "english", "singlespacing", "headsepline"]
+      classoption: ["11pt", "english", "spanish", "singlespacing", "headsepline"]
       format-resources:
         - MastersDoctoralThesis.cls
       template-partials: 
@@ -29,3 +30,5 @@ contributes:
       linkcolor: blue
       urlcolor: red
       toclinkcolor: black
+      
+      

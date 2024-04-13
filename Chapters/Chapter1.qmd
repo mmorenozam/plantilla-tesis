@@ -2,7 +2,7 @@
 format:
   pdf:
     documentclass: ../MastersDoctoralThesis
-    classoption: ["11pt", "english", "singlespacing", "headsepline"]
+    classoption: ["11pt", "english", "spanish", "singlespacing", "headsepline"]
 ---
 
 # Chapter 1 Title {#sec-Chapter1}
@@ -58,7 +58,7 @@ Sunil's template was made available through [LaTeXTemplates](http://www.LaTeXTem
 
 ## Filling in Your Information
 
-Most of the personal information is found on in the `_quarto.yml` file.
+Most of the personal information is found on in the `_quarto.yml` file @Reference1.
 
 * author -- you; optionally add url
 * supervisor -- your supervisor; optionally add url.

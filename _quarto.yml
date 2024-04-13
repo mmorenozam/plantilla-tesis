@@ -2,39 +2,41 @@ project:
   type: book
   output-dir: .
 
+language: language_custom.yml
+
+
 book:
-  title: A doctoral thesis title
-  date: December 15, 2023
+  title: Evaluación de dos métodos para la reducción de nitrógeno, fósforo y DQO de aguas residuales, mediante un cultivo axénico de cianobacterias y un consorcio microbiano, inmovilizados y en suspensión
+  date: Sangolquí, Febrero 2010
   author:
-    name: Jane Doe
-    url: http://www.janedoe.com
+    name: Mauricio Martín Moreno Zambrano
   downloads: [pdf]
-  abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis accumsan ante. Quisque lorem metus, varius id urna eget, lacinia dapibus sem. Etiam laoreet, quam ac mollis congue, arcu leo dictum neque, nec euismod sem enim luctus odio. Donec condimentum tortor sit amet mollis volutpat. Donec ornare libero vel velit malesuada consectetur. Vestibulum in sem non justo dignissim congue at quis erat. Integer quis erat vitae mi maximus fringilla tristique nec odio. Morbi non ipsum sapien. Vestibulum tortor est, ultricies in eros et, bibendum iaculis justo. Cras pellentesque enim quam, id pretium lacus lacinia non. Integer velit neque, ultrices a malesuada vel, imperdiet quis enim. Quisque eu facilisis urna, ut faucibus lorem. Donec mollis turpis sed arcu venenatis interdum. Nulla facilisis tortor ac scelerisque consequat."
+  abstract: "Se evaluó la eficiencia de reducción de nitrógeno amoniacal, fósforo total y demanda química de oxígeno (DQO), en agua residual sintética y semi-sintética utilizando una cepa axénica de Nosctoc sp. y un consorcio microbiano, inmovilizados en perlas de alginato de calcio y en suspensión. Tras un período de 21 días de tratamiento, se observó, para el agua residual semi-sintética que el cultivo inmovilizado de Nostoc sp. presentó la mayor eficiencia de reducción de nitrógeno y fósforo, mientras que para el agua residual sintética, no existió una reducción de nitrógeno con respecto a la concentración inicial del mismo con ninguno de los tratamientos, y la mayor reducción de fósforo fue observada en el cultivo inmovilizado del consorcio microbiano. Transcurridos 18 días, se observó que para la DQO, en ambos ensayos, en agua residual semi-sintética y sintética, la mayor eficiencia de reducción la presentaron los cultivos en suspensión, tanto del consorcio como de la cepa axénica, incluyendo también el tratamiento sin inóculo, para el caso del agua residual semi-sintética (que solo contó con la microbiota propia del agua residual). Finalmente se realizaron pruebas de toxicidad en Daphnia pulex con el agua tratada correspondiente al cultivo de cianobacterias axénico inmovilizado, sin evidenciarse mortalidad en los organismos de prueba."
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
     - references.qmd
-  appendices:
-    - Appendices/AppendixA.qmd
+  appendices: 
+    - Appendices/ApendiceA.qmd
 
   site-url: https://nmfs-opensci.github.io/quarto-thesis/
   repo-url: https://github.com/nmfs-opensci/quarto-thesis
   repo-actions: [edit, source, issue]
   search: true
 
+
 thesis:
   supervisor: 
-    name: Dr. Ashok Kunil
-    url: https://quarto.org/
-  degree-name: Doctor of Philosophy
-  university: University of Ottawa
-  department: Department of Mathematics
-  group: Informatics Program
-  faculty: Applied Math Group
+    name: M. Sc. Alma Koch
+  degree-name: Ingeniero en Biotecnología
+  university: ESCUELA POLITÉCNICA DEL EJÉRCITO
+  department: Departamento de Ciencias de la Vida
+  group: Laboratorio de Microbiología Ambiental
+  faculty: Facultad de Ingeniería en Biotecnología 
   declaration: "Frontmatter/declaration.tex"
   quotation:
-    text: "Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."
-    attribution: Dave Barry
+    text: "There is no such thing as a free lunch"
+    attribution: Milton Friedman
   acknowledgements: "Frontmatter/acknowledgements.tex"
   abbreviations: "Frontmatter/abbreviations.tex"
   symbols: "Frontmatter/symbols.tex"
@@ -43,7 +45,7 @@ thesis:
   logo-height: "3cm"
 
 bibliography: [example.bib]
-
+  
 execute:
   echo: false
   code-overflow: wrap
@@ -56,4 +58,7 @@ format:
     urlcolor: red
     toclinkcolor: black
     toc-depth: 2
+
+    
+
 

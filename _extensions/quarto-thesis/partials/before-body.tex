@@ -11,7 +11,7 @@
 
 \vspace*{.06\textheight}
 {\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+\textsc{\Large Tesis de Grado}\\[0.5cm] % Thesis type
 
 \HRule \\[0.4cm] % Horizontal line
 {\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
@@ -19,7 +19,7 @@
  
 \begin{minipage}[t]{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Author:}\\
+\emph{Autor:}\\
 $if(author.url)$
 \href{$author.url$}{\authorname} % Author name - remove the \href bracket to remove the link
 $else$
@@ -36,24 +36,24 @@ $else$%
 \supname
 $endif$
 \end{flushright}
-\end{minipage}\\[3cm]
+\end{minipage}\\[2cm]
  
-\vfill
+%\vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
+\large \textit{Previa a la obtención de grado académico o título de:\\ \degreename}\\[0.3cm] % University requirement text
+\textit{en el}\\[0.4cm]
 \groupname\\
 \deptname\\[2cm] % Research group name and department name
  
 \vfill
 
-$if(thesis.logo)$
-$if(thesis.logo-height)$
-\includegraphics[height=$thesis.logo-height$]{$thesis.logo$} % University/department logo
-$else$
-\includegraphics{$thesis.logo$}
-$endif$
-$endif$
+% $if(thesis.logo)$
+% $if(thesis.logo-height)$
+% \includegraphics[height=$thesis.logo-height$]{$thesis.logo$} % University/department logo
+% $else$
+% \includegraphics{$thesis.logo$}
+% $endif$
+% $endif$
 
 $if(book.date)$
 {\large $book.date$}\\[4cm] % Date
@@ -131,10 +131,13 @@ $endif$
 \begingroup
 \hypersetup{linkcolor=$if(toclinkcolor)$$toclinkcolor$$else$black$endif$}
 
+\renewcommand{\contentsname}{\'Indice}
 \tableofcontents % Prints the main table of contents
 
+\renewcommand{\listfigurename}{Lista de Figuras}
 \listoffigures % Prints the list of figures
 
+\renewcommand{\listtablename}{Lista de Tablas}
 \listoftables % Prints the list of tables
 
 \endgroup
