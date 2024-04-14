@@ -22,7 +22,7 @@ Es importante mencionar que al momento (Abril de 2024), las versiones de Quarto 
 
 ## Créditos
 
-Esta adaptación de la extensión original escrito por [Eli Holmes](https://eeholmes.github.io) fue llevada a cabo por [Mauricio Moreno Zambrano](https://mmorenozam.netlify.app/).
+Esta adaptación de la extensión original escrito por [Eli Holmes](https://eeholmes.github.io) fue llevada a cabo por [Mauricio Moreno Zambrano](https://mmorenozam.netlify.app/). @Reference1
 
 **A continuación, dejo exactamente el mismo contenido redactado por Eli Holmes donde explica en breve la extensión original.**
 
