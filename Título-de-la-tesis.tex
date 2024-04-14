@@ -1,0 +1,971 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  11pt,
+  spanish,
+  singlespacing,
+  headsepline]{MastersDoctoralThesis}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[paper=a4paper,inner=2.5cm,outer=3.8cm,bindingoffset=.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters; causes problems for xelatex
+
+%\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+
+
+%----------------------------------------------------------------------------------------
+%	MARGINS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	headheight=4ex,
+	includehead,
+	includefoot
+}
+
+\raggedbottom
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[backend=biber, style=apa, natbib=true]{biblatex}
+\addbibresource{example.bib}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Título de la tesis},
+  pdfauthor={Nombre del autor},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={black},
+  urlcolor={red},
+  pdfcreator={LaTeX via pandoc}}
+
+\thesistitle{Título de la
+tesis} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Nombre del
+supervisor} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Ingeniero} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Nombre del
+autor} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{Universidad Gotittas del
+Saber} % Your university's name, this is used in the title page and abstract, print it elsewhere with \univname
+\department{Departamento de Ciencias de la
+Vida} % Your department's name, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{Laboratorio de Microbiología
+Ambiental} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{Facultad de Ingeniería en
+Biotecnología} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\setcounter{tocdepth}{1} % The depth to which the document sections are printed to the table of contents
+\begin{document}
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+\textsc{\Large Tesis de Grado}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+ 
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autor:}\\
+\authorname
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+%
+\supname
+
+\end{flushright}
+\end{minipage}\\[2cm]
+ 
+%\vfill
+
+\large \textit{Previa a la obtención de grado académico o título de:\\ \degreename}\\[0.3cm] % University requirement text
+\textit{en el}\\[0.4cm]
+\groupname\\
+\deptname\\[2cm] % Research group name and department name
+ 
+\vfill
+
+
+{\large Düsseldorf, Abril 2024}\\[4cm] % Date
+
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+\input{"Frontmatter/declaration.tex"}
+
+\end{declaration}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent``{\itshape There is no such thing as a free lunch}''\bigbreak
+
+\hfill Milton Friedman
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel
+sapien et quam ultricies laoreet lobortis vel nisi. Nulla consectetur
+nisi non augue accumsan lobortis. Praesent eu nibh vel risus rutrum
+laoreet a eget sem. Integer sodales mi ut lacus condimentum, non
+tristique nibh tincidunt. Fusce blandit eu purus eget ultrices. Duis
+feugiat non quam in vestibulum. In nec lacus dictum, ullamcorper dui
+semper, euismod purus. Aenean pellentesque ultrices tincidunt. Aliquam
+placerat metus ut sollicitudin pharetra. Suspendisse aliquet augue quis
+elementum fermentum. Nullam eu sem leo. Proin placerat est tortor, et
+posuere felis volutpat eu. Donec pharetra diam mauris, in luctus augue
+dignissim id. Sed tincidunt commodo tincidunt.
+\end{abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+\input{"Frontmatter/acknowledgements.tex"}
+\end{acknowledgements}
+
+
+% 
+
+\begingroup
+\hypersetup{linkcolor=black}
+
+\renewcommand{\contentsname}{\'Indice}
+\tableofcontents % Prints the main table of contents
+
+\renewcommand{\listfigurename}{Lista de Figuras}
+\listoffigures % Prints the list of figures
+
+\renewcommand{\listtablename}{Lista de Tablas}
+\listoftables % Prints the list of tables
+
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\input{"Frontmatter/abbreviations.tex"}
+
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\input{"Frontmatter/symbols.tex"}
+
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{\input{"Frontmatter/dedication.tex"}} 
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+\renewcommand{\chaptername}{Capítulo}
+
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, breakable, frame hidden]}{\end{tcolorbox}}\fi
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-Chapter1}{%
+\chapter{Título del Capítulo 1}\label{sec-Chapter1}}
+
+Este template fue creado en base de la extensión \texttt{quarto-thesis}
+de la autoría de Eli Holmes. Para mayor información de la versión
+original, puedes visitar su repositorio en
+\href{https://github.com/nmfs-opensci/quarto-thesis}{Github}. Ahí
+encontrarás más ayuda acerca de las maneras de cambiar ciertos aspectos
+del formato ya sea a través de simples cambios en las opciones de los
+archivos \texttt{.yml} o sugerencias de donde cambiar el documento de
+clase de \LaTeX{} \texttt{MastersDoctoralThesis.cls} (escrito por Vel y
+Johannes Böttcher) sobre el cual la extensión de Quarto fue creada.
+
+\hypertarget{requerimientos}{%
+\section{Requerimientos}\label{requerimientos}}
+
+Para que este template funcione de manera correcta, es necesario el
+tener instalados los siguientes programas (se muestra entre paréntesis
+la versión usada en la renderización de este documento)
+
+\begin{itemize}
+\tightlist
+\item
+  R (v4.3.1)
+\item
+  RStudio (2023.12.1+402)
+\item
+  tinytex (2024.04)
+\item
+  Quarto (1.3.450)
+\end{itemize}
+
+Es importante mencionar que al momento (Abril de 2024), las versiones de
+Quarto \textbf{1.4.553} y \textbf{1.5.29} tienen un ``bug'' que no
+permiten la correcta renderización del documento (generan problemas si
+es que no existen llamados a referencias bibliográficas).
+
+\hypertarget{cruxe9ditos}{%
+\section{Créditos}\label{cruxe9ditos}}
+
+Esta adaptación de la extensión original escrito por
+\href{https://eeholmes.github.io}{Eli Holmes} fue llevada a cabo por
+\href{https://mmorenozam.netlify.app/}{Mauricio Moreno Zambrano}.
+
+\textbf{A continuación, dejo exactamente el mismo contenido redactado
+por Eli Holmes donde explica en breve la extensión original.}
+
+\hypertarget{welcome-and-thank-you}{%
+\section{Welcome and Thank You}\label{welcome-and-thank-you}}
+
+Welcome to this \LaTeX{} Thesis Template, using the \LaTeX{} typesetting
+system and \href{quarto.org}{Quarto} and based on the \LaTeX{} thesis
+template MastersDoctoralThesis version 2.0 downloaded from
+\href{http://www.LaTeXTemplates.com}{LaTeXTemplates}. This LaTeX
+document class was authored by Vel (vel@latextemplates.com) and Johannes
+Böttcher based on a style file by Steve R. Gunn from the University of
+Southampton (UK), department of Electronics and Computer Science.
+
+\hypertarget{a-short-math-guide-for}{%
+\section{\texorpdfstring{A Short Math Guide for
+\LaTeX{}}{A Short Math Guide for }}\label{a-short-math-guide-for}}
+
+If you are writing a technical or mathematical thesis, then you may want
+to read the document by the AMS (American Mathematical Society) called,
+\texttt{A\ Short\ Math\ Guide\ for\ \textbackslash{}LaTeX\{\}".\ It\ can\ be\ found\ online\ at\ {[}AMS{]}(http://www.ams.org/tex/amslatex.html)\ \ under\ the}Additional
+Documentation'' section towards the bottom of the page.
+
+\hypertarget{common-math-symbols}{%
+\subsection{\texorpdfstring{Common \LaTeX{} Math
+Symbols}{Common  Math Symbols}}\label{common-math-symbols}}
+
+There are a multitude of mathematical symbols available for \LaTeX{} and
+it would take a great effort to learn the commands for them all. The
+most common ones you are likely to use are shown on
+\href{http://www.sunilpatel.co.uk/latex-type/latex-math-symbols/}{this
+page}.
+
+You can use this page as a reference or crib sheet, the symbols are
+rendered as large, high quality images so you can quickly find the
+\LaTeX{} command for the symbol you need.
+
+\hypertarget{about-this-template}{%
+\section{About this Template}\label{about-this-template}}
+
+This \LaTeX{} Thesis Template is originally based and created around a
+\LaTeX{} style file created by Steve R. Gunn from the University of
+Southampton (UK), department of Electronics and Computer Science. You
+can find his original thesis style file at his site, here:
+http://www.ecs.soton.ac.uk/\textasciitilde srg/softwaretools/document/templates/.
+
+Steve's \texttt{ecsthesis.cls} was then taken by Sunil Patel who
+modified it by creating a skeleton framework and folder structure to
+place the thesis files in. The resulting template can be found on
+Sunil's site here: http://www.sunilpatel.co.uk/thesis-template.
+
+Sunil's template was made available through
+\href{http://www.LaTeXTemplates.com}{LaTeXTemplates} where it was
+modified many times based on user requests and questions. Version 2.0
+and onwards of this template represents a major modification to Sunil's
+template and is, in fact, hardly recognisable. The work to make version
+2.0 possible was carried out by Vel (vel@latextemplates.com) and
+Johannes Böttcher.
+
+\hypertarget{what-this-template-includes}{%
+\section{What this Template
+Includes}\label{what-this-template-includes}}
+
+\hypertarget{folders}{%
+\subsection{Folders}\label{folders}}
+
+\begin{itemize}
+\item
+  Appendices -- this is the folder where you put the appendices. Each
+  appendix should go into its own separate qmd file. An example and
+  template are included in the directory.
+\item
+  Chapters -- this is the folder where you put the thesis chapters. Each
+  chapter should go in its own separate qmd file.
+\item
+  Figures -- this folder contains static figures for the thesis,
+  i.e.~figures that are not generated by code in the chapters.
+\end{itemize}
+
+\hypertarget{files}{%
+\subsection{Files}\label{files}}
+
+\begin{itemize}
+\item
+  example.bib -- this is file that contains all the bibliographic
+  information and references that you will be citing in the thesis for
+  use with BibTeX. You can write it manually, but there are reference
+  manager programs available that will create and manage it for you.
+  Zotero is popular and integrates with RStudio IDE if you use that.
+\item
+  MastersDoctoralThesis.cls -- this is the class file that tells
+  \LaTeX{} how to format the thesis.
+\item
+  pdf in docs folder -- this is your typeset thesis.
+\item
+  Frontmater folder -- this has the files for the various front matter
+  elements.
+\end{itemize}
+
+\hypertarget{filling-in-your-information}{%
+\section{Filling in Your
+Information}\label{filling-in-your-information}}
+
+Most of the personal information is found on in the
+\texttt{\_quarto.yml} file.
+
+\begin{itemize}
+\tightlist
+\item
+  author -- you; optionally add url
+\item
+  supervisor -- your supervisor; optionally add url.
+\item
+  university -- your university
+\item
+  department -- your department
+\item
+  faculty -- faculty name
+\item
+  group -- research group name (optional)
+\item
+  abstract
+\end{itemize}
+
+\hypertarget{the-texbefore-body.tex-file-explained}{%
+\section{\texorpdfstring{The \texttt{tex\textbackslash{}before-body.tex}
+File
+Explained}{The tex\textbackslash before-body.tex File Explained}}\label{the-texbefore-body.tex-file-explained}}
+
+The \texttt{tex\textbackslash{}before-body.tex} file contains the
+structure of the thesis and is a mix of Pandoc template and \LaTeX{}
+code. The bits that look like \texttt{\$book.university\$} say are
+Pandoc and are referencing variables in the \texttt{\_quarto.yml} file.
+Knowing that, you should be able to figure out what is happening.
+
+There are plenty of written comments that explain what pages, sections
+and formatting the \LaTeX{} code is creating. Each major document
+element is divided into commented blocks with titles in all capitals to
+make it obvious what the following bit of code is doing. Initially there
+seems to be a lot of \LaTeX{} code, but this is all formatting, and it
+has all been taken care of so you don't have to do it.
+
+Many of the sections have \texttt{\$if(...)\$} so that the section is
+only included if you included information for that in
+\texttt{\_quarto.yml}.
+
+In the \texttt{\_quarto.yml}, \texttt{pdf:\ toc:\ false} is used so that
+Quarto/Pandoc doesn't add a table of contents. This template puts the
+table of contents before the abbreviations and symbols pages and
+Quarto/Pandoc doesn't let us control where it puts the table of
+contents. So we have to add the TOC manually for pdf and pass in
+\texttt{toc:\ false}.
+
+The list of figures and tables are all taken care of for you and do not
+need to be manually created or edited. The next set of pages are more
+likely to be optional and can be deleted since they are for a more
+technical thesis: insert a list of abbreviations you have used in the
+thesis, then a list of the physical constants and numbers you refer to
+and finally, a list of mathematical symbols used in any formulae. Making
+the effort to fill these tables means the reader has a one-stop place to
+refer to instead of searching the internet and references to try and
+find out what you meant by certain abbreviations or symbols.
+
+The list of symbols is split into the Roman and Greek alphabets. Whereas
+the abbreviations and symbols ought to be listed in alphabetical order
+(and this is \textbf{not} done automatically for you) the list of
+physical constants should be grouped into similar themes.
+
+The next page contains a one line dedication. Who will you dedicate your
+thesis to?
+
+\hypertarget{adding-your-chapters-and-appendices}{%
+\section{Adding Your Chapters and
+Appendices}\label{adding-your-chapters-and-appendices}}
+
+Add your chapters and appendices to \texttt{\_quarto.yml}. Note that the
+spacing is important as is the leading \texttt{-}.
+
+\hypertarget{bibliography-and-citations}{%
+\section{Bibliography and Citations}\label{bibliography-and-citations}}
+
+Citations will be added and formatted automatically for you.
+
+If you use the RStudio IDE, then you can link Zotero to RStudio and
+Quarto will find your citations for you when you enter \texttt{@}. This
+is in the visual editor mode. Make sure to search for videos on how to
+do this as using Zotero libraries will make your citation and
+bibliography management much much easier.
+
+In the text use \texttt{@smith2000} to produce Smith (2000) add use
+\texttt{{[}@smith2000,\ @jones1999{]}} to produce (Smith 2000; Jones
+1999). See the natbib cheatsheet for how to do other types of formatting
+for your in text citations. The bibliography style
+(\texttt{classoption:\ "authoryear"}) is used for the bibliography and
+is a fully featured style that will even include links to where the
+referenced paper can be found online.
+
+\hypertarget{a-note-on-bibtex}{%
+\subsubsection{A Note on bibtex}\label{a-note-on-bibtex}}
+
+The bibtex backend used in the template by default does not correctly
+handle unicode character encoding (i.e.~``international'' characters).
+You may see a warning about this in the compilation log and, if your
+references contain unicode characters, they may not show up correctly or
+at all. One solution to this is to use the biber backend instead of the
+outdated bibtex backend. This is done by finding this in
+\texttt{tex/in-header.tex}: \texttt{backend=bibtex} and changing it to
+\texttt{backend=biber}. Google a bit to find information on this.
+
+\hypertarget{sec-ThesisConventions}{%
+\section{Thesis Features and Conventions}\label{sec-ThesisConventions}}
+
+To get the best out of this template, there are a few conventions that
+you may want to follow.
+
+\hypertarget{printing-format}{%
+\subsection{Printing Format}\label{printing-format}}
+
+This thesis template is designed for double sided printing (i.e.~content
+on the front and back of pages) as most theses are printed and bound
+this way. Switching to one sided printing is as simple as adding
+\texttt{"oneside"} to \texttt{classoptions:} in the
+\texttt{\_quarto.yml} file. The headers for the pages contain the page
+number on the outer side (so it is easy to flick through to the page you
+want) and the chapter name on the inner side.
+
+The text is set to 11 point by default with single line spacing, again,
+you can tune the text size and spacing should you want or need to using
+the class options. The spacing can be changed similarly by replacing the
+\texttt{"singlespacing"} with \texttt{"onehalfspacing"} or
+\texttt{"doublespacing"} in the class options.
+
+\hypertarget{using-us-letter-paper}{%
+\subsection{Using US Letter Paper}\label{using-us-letter-paper}}
+
+The paper size used in the template is A4, which is the standard size in
+Europe. If you are using this thesis template elsewhere and particularly
+in the United States, then you may have to change the A4 paper size to
+the US Letter size. This can be by editting \texttt{geometry:} in
+\texttt{\_quarto.yml} in the pdf format section.
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+When you render your Quarto thesis to PDF, it will process \LaTeX{}
+table code just fine. However, if you are doing that, I am guessing you
+would be writing your thesis in \LaTeX{} not Quarto. So I will not
+discuss \LaTeX{} tables. Instead here is how you create tables using R.
+Python and Julia users, you'll have your own table packages but the idea
+will be similar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\CommentTok{\#| label: tbl{-}cars}
+\CommentTok{\#| tbl{-}cap: This is my caption.}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(mtcars))}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{\#\textbar{}} is what sets up our cross-references and you
+can then reference the table as \texttt{@tbl-cars}. Note in order for
+table numbering to work in Quarto, you \textbf{must} label your tables
+with the \texttt{tbl-} prefix.
+
+\hypertarget{tbl-cars}{}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.2609}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0725}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0580}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0725}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0580}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0725}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0870}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0435}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0435}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0725}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 22\tabcolsep) * \real{0.0725}}@{}}
+\caption{\label{tbl-cars}This is my caption.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mpg
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+cyl
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+disp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+hp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+drat
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wt
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+qsec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+vs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+am
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+gear
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+carb
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+mpg
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+cyl
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+disp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+hp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+drat
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wt
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+qsec
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+vs
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+am
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+gear
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+carb
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 & 16.46 & 0 & 1 & 4 &
+4 \\
+Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 & 17.02 & 0 & 1 & 4
+& 4 \\
+Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 & 18.61 & 1 & 1 & 4 &
+1 \\
+Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 & 19.44 & 1 & 0 & 3
+& 1 \\
+Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 & 17.02 & 0 & 0
+& 3 & 2 \\
+Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22 & 1 & 0 & 3 & 1 \\
+\end{longtable}
+
+This is Tabla~\ref{tbl-cars}.
+
+See the Quarto manual for full examples and instructions.
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+Again we write in Quarto (markdown) not \LaTeX{} for our figures. You
+can write in \LaTeX{} if you really want but it would only be
+interpreted for the PDF output.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\}}
+\CommentTok{\#| label: fig{-}cars}
+\CommentTok{\#| fig{-}cap: This is my caption.}
+\FunctionTok{plot}\NormalTok{(mtcars[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{])}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{\#\textbar{}} is what sets up our cross-references and you
+can then reference the table as \texttt{@fig-cars}.
+
+\begin{figure}
+
+{\centering \includegraphics{index_files/figure-pdf/fig-cars-1.pdf}
+
+}
+
+\caption{\label{fig-cars}This is my caption.}
+
+\end{figure}
+
+This is Figura~\ref{fig-cars}.
+
+See the Quarto manual for full examples and instructions.
+
+\hypertarget{typesetting-mathematics}{%
+\subsection{Typesetting mathematics}\label{typesetting-mathematics}}
+
+If your thesis is going to contain heavy mathematical content, \LaTeX{}
+will make it look beautiful, for HTML or PDF output.
+
+The
+\href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{Not
+So Short Introduction to LaTeX} should tell you everything you need to
+know for most cases of typesetting mathematics. If you need more
+information, a much more thorough mathematical guide is available from
+the AMS called,
+\href{http://tug.ctan.org/info/short-math-guide/short-math-guide.pdf}{A
+Short Math Guide to LaTeX}.
+
+\hypertarget{in-closing}{%
+\section{In Closing}\label{in-closing}}
+
+Good luck and have lots of fun!
+
+This guide was written originally by
+
+Sunil Patel: http://www.sunilpatel.co.uk\}\{www.sunilpatel.co.uk
+
+and Vel: http://www.LaTeXTemplates.com
+
+and heavily shortened and adapted for \href{https://quarto.org/}{Quarto}
+by \href{https://eeholmes.github.io}{Eli Holmes}.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-Chapter2}{%
+\chapter{Chapter 2 Title}\label{sec-Chapter2}}
+
+\hypertarget{main-section-1}{%
+\section{Main Section 1}\label{main-section-1}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum
+enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam
+non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie
+eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt
+ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis
+purus. Integer dapibus ligula ac risus convallis pellentesque.
+
+\begin{equation}\protect\hypertarget{eq-pmb}{}{
+\int_{A_i}{\lambda (\pmb{\mu})}
+}\label{eq-pmb}\end{equation}
+
+\begin{equation}\protect\hypertarget{eq-mathbf}{}{
+\int_{A_i}{\lambda (\mathbf{x})}
+}\label{eq-mathbf}\end{equation}
+
+\hypertarget{subsection-1}{%
+\subsection{Subsection 1}\label{subsection-1}}
+
+Nunc posuere quam at lectus tristique eu ultrices augue venenatis.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+cubilia Curae; Aliquam erat volutpat. Vivamus sodales tortor eget quam
+adipiscing in vulputate ante ullamcorper. Sed eros ante, lacinia et
+sollicitudin et, aliquam sit amet augue. In hac habitasse platea
+dictumst.
+
+\hypertarget{subsection-2}{%
+\subsection{Subsection 2}\label{subsection-2}}
+
+Morbi rutrum odio eget arcu adipiscing sodales. Aenean et purus a est
+pulvinar pellentesque. Cras in elit neque, quis varius elit. Phasellus
+fringilla, nibh eu tempus venenatis, dolor elit posuere quam, quis
+adipiscing urna leo nec orci. Sed nec nulla auctor odio aliquet
+consequat. Ut nec nulla in ante ullamcorper aliquam at sed dolor.
+Phasellus fermentum magna in augue gravida cursus. Cras sed pretium
+lorem. Pellentesque eget ornare odio. Proin accumsan, massa viverra
+cursus pharetra, ipsum nisi lobortis velit, a malesuada dolor lorem eu
+neque.
+
+\hypertarget{main-section-2}{%
+\section{Main Section 2}\label{main-section-2}}
+
+Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam
+placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum
+mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget
+quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla
+non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor
+lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat
+vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate
+in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing
+nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis
+velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id
+facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at,
+molestie in quam. Aenean rhoncus vehicula hendrerit.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{bibliografuxeda}{%
+\chapter*{Bibliografía}\label{bibliografuxeda}}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\markboth{Bibliografía}{Bibliografía}
+
+\printbibliography[heading=none]
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{part}{Apéndices}
+\appendix
+
+\hypertarget{sec-appA}{%
+\chapter{Frequently Asked Questions}\label{sec-appA}}
+
+\hypertarget{how-do-i-change-the-colors-of-links}{%
+\section{How do I change the colors of
+links?}\label{how-do-i-change-the-colors-of-links}}
+
+Pass in \texttt{urlcolor:} in yaml. Or set these in the
+include-in-header file.
+
+\noindent If you want to completely hide the links, you can use:
+
+\{\small\verb!\hypersetup{allcolors=.}!\}, or even better:
+
+\{\small\verb!\hypersetup{hidelinks}!\}.
+
+\noindent If you want to have obvious links in the PDF but not the
+printed text, use:
+
+\{\small\verb!\hypersetup{colorlinks=false}!\}.
+
+
+
+
+\end{document}

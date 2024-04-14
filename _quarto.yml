@@ -4,14 +4,13 @@ project:
 
 language: language_custom.yml
 
-
 book:
-  title: Evaluación de dos métodos para la reducción de nitrógeno, fósforo y DQO de aguas residuales, mediante un cultivo axénico de cianobacterias y un consorcio microbiano, inmovilizados y en suspensión
-  date: Sangolquí, Febrero 2010
+  title: Título de la tesis
+  date: Düsseldorf, Abril 2024
   author:
-    name: Mauricio Martín Moreno Zambrano
+    name: Nombre del autor
   downloads: [pdf]
-  abstract: "Se evaluó la eficiencia de reducción de nitrógeno amoniacal, fósforo total y demanda química de oxígeno (DQO), en agua residual sintética y semi-sintética utilizando una cepa axénica de Nosctoc sp. y un consorcio microbiano, inmovilizados en perlas de alginato de calcio y en suspensión. Tras un período de 21 días de tratamiento, se observó, para el agua residual semi-sintética que el cultivo inmovilizado de Nostoc sp. presentó la mayor eficiencia de reducción de nitrógeno y fósforo, mientras que para el agua residual sintética, no existió una reducción de nitrógeno con respecto a la concentración inicial del mismo con ninguno de los tratamientos, y la mayor reducción de fósforo fue observada en el cultivo inmovilizado del consorcio microbiano. Transcurridos 18 días, se observó que para la DQO, en ambos ensayos, en agua residual semi-sintética y sintética, la mayor eficiencia de reducción la presentaron los cultivos en suspensión, tanto del consorcio como de la cepa axénica, incluyendo también el tratamiento sin inóculo, para el caso del agua residual semi-sintética (que solo contó con la microbiota propia del agua residual). Finalmente se realizaron pruebas de toxicidad en Daphnia pulex con el agua tratada correspondiente al cultivo de cianobacterias axénico inmovilizado, sin evidenciarse mortalidad en los organismos de prueba."
+  abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel sapien et quam ultricies laoreet lobortis vel nisi. Nulla consectetur nisi non augue accumsan lobortis. Praesent eu nibh vel risus rutrum laoreet a eget sem. Integer sodales mi ut lacus condimentum, non tristique nibh tincidunt. Fusce blandit eu purus eget ultrices. Duis feugiat non quam in vestibulum. In nec lacus dictum, ullamcorper dui semper, euismod purus. Aenean pellentesque ultrices tincidunt. Aliquam placerat metus ut sollicitudin pharetra. Suspendisse aliquet augue quis elementum fermentum. Nullam eu sem leo. Proin placerat est tortor, et posuere felis volutpat eu. Donec pharetra diam mauris, in luctus augue dignissim id. Sed tincidunt commodo tincidunt."
   chapters:
     - index.qmd
     - Chapters/Chapter2.qmd
@@ -25,11 +24,12 @@ book:
   search: true
 
 
+
 thesis:
   supervisor: 
-    name: M. Sc. Alma Koch
-  degree-name: Ingeniero en Biotecnología
-  university: ESCUELA POLITÉCNICA DEL EJÉRCITO
+    name: Nombre del supervisor
+  degree-name: Ingeniero
+  university: Universidad Gotittas del Saber
   department: Departamento de Ciencias de la Vida
   group: Laboratorio de Microbiología Ambiental
   faculty: Facultad de Ingeniería en Biotecnología 
@@ -41,7 +41,7 @@ thesis:
   abbreviations: "Frontmatter/abbreviations.tex"
   symbols: "Frontmatter/symbols.tex"
   dedication: "Frontmatter/dedication.tex"
-  logo: images/logo.png
+  # logo: images/logo.png
   logo-height: "3cm"
 
 bibliography: [example.bib]
@@ -54,7 +54,7 @@ execute:
 # linkcolor changes color of internal links (like to figures)
 # toclinkcolor changes color of toc, lof and lot links
 format:
-  quarto-thesis-pdf: 
+  quarto-thesis-pdf:
     urlcolor: red
     toclinkcolor: black
     toc-depth: 2

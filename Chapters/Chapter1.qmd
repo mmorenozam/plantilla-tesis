@@ -2,10 +2,29 @@
 format:
   pdf:
     documentclass: ../MastersDoctoralThesis
-    classoption: ["11pt", "english", "spanish", "singlespacing", "headsepline"]
+    classoption: ["11pt", "spanish", "singlespacing", "headsepline"]
 ---
 
-# Chapter 1 Title {#sec-Chapter1}
+# Título del Capítulo 1 {#sec-Chapter1}
+
+Este template fue creado en base de la extensión `quarto-thesis` de la autoría de Eli Holmes. Para mayor información de la versión original, puedes visitar su repositorio en [Github](https://github.com/nmfs-opensci/quarto-thesis). Ahí encontrarás más ayuda acerca de las maneras de cambiar ciertos aspectos del formato ya sea a través de simples cambios en las opciones de los archivos `.yml` o sugerencias de donde cambiar el documento de clase de \LaTeX{} `MastersDoctoralThesis.cls` (escrito por Vel y Johannes Böttcher) sobre el cual la extensión de Quarto fue creada.
+
+## Requerimientos
+
+Para que este template funcione de manera correcta, es necesario el tener instalados los siguientes programas (se muestra entre paréntesis la versión usada en la renderización de este documento)
+
+* R (v4.3.1)
+* RStudio (2023.12.1+402)
+* tinytex (2024.04)
+* Quarto (1.3.450)
+
+Es importante mencionar que al momento (Abril de 2024), las versiones de Quarto **1.4.553** y **1.5.29** tienen un "bug" que no permiten la correcta renderización del documento (generan problemas si es que no existen llamados a referencias bibliográficas).
+
+## Créditos
+
+Esta adaptación de la extensión original escrito por [Eli Holmes](https://eeholmes.github.io) fue llevada a cabo por [Mauricio Moreno Zambrano](https://mmorenozam.netlify.app/).
+
+**A continuación, dejo exactamente el mismo contenido redactado por Eli Holmes donde explica en breve la extensión original.**
 
 ## Welcome and Thank You
 
@@ -58,7 +77,7 @@ Sunil's template was made available through [LaTeXTemplates](http://www.LaTeXTem
 
 ## Filling in Your Information
 
-Most of the personal information is found on in the `_quarto.yml` file @Reference1.
+Most of the personal information is found on in the `_quarto.yml` file.
 
 * author -- you; optionally add url
 * supervisor -- your supervisor; optionally add url.
@@ -180,4 +199,3 @@ Sunil Patel: http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk
 and Vel: http://www.LaTeXTemplates.com
 
 and heavily shortened and adapted for [Quarto](https://quarto.org/) by [Eli Holmes](https://eeholmes.github.io).
-

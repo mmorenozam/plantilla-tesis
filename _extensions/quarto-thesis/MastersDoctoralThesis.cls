@@ -313,7 +313,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \newcommand{\abbrevname}{List of Abbreviations}
-\providecaptionname{english}{\abbrevname}{Lista de Abreviaciones}
+\providecaptionname{spanish}{\abbrevname}{Lista de Abreviaciones}
 \NewDocumentEnvironment{abbreviations}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\abbrevname}}{\addchap*{\abbrevname}}
@@ -332,7 +332,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 \DeclareDocumentCommand{\abstracttitlefont}{}{}
 \newcommand{\byname}{por}
 \newcommand{\abstractname}{Abstract}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglis,USenglish}{\abstractname}{Resumen}
+\providecaptionname{spanish}{\abstractname}{Resumen}
 \providecaptionname{spanish}{\byname}{por}
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{abstract}{ O{} }{%
@@ -402,7 +402,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
 \newcommand{\acknowledgementname}{Acknowledgements}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglis,USenglish}{\acknowledgementname}{Agradecimientos} % Acknowledgement text for English countries
+\providecaptionname{spanish}{\acknowledgementname}{Agradecimientos} % Acknowledgement text for English countries
 
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{acknowledgements}{}{%
@@ -427,7 +427,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \newcommand{\authorshipname}{Declaration of Authorship}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\authorshipname}{Certificación} % Declaration of Authorship text for English countries
+\providecaptionname{spanish}{\authorshipname}{Certificación} % Declaration of Authorship text for English countries
 
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{declaration}{}{
@@ -472,8 +472,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \newcommand{\constantsname}{Physical Constants}
-\providecaptionname{english,british,american}{\constantsname}{Constantes físicas}
-\providecaptionname{ngerman,german,austrian,naustrian}{\constantsname}{Physikalische Konstanten}
+\providecaptionname{spanish}{\constantsname}{Constantes físicas}
 
 \NewDocumentEnvironment{constants}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
@@ -490,8 +489,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \newcommand{\symbolsname}{List of Symbols}
-\providecaptionname{english,british,american}{\symbolsname}{Lista de Símbolos}
-\providecaptionname{ngerman,german,austrian,naustrian}{\symbolsname}{Symbolverzeichnis}
+\providecaptionname{spanish}{\symbolsname}{Lista de Símbolos}
 
 \NewDocumentEnvironment{symbols}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}

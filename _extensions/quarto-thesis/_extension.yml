@@ -5,8 +5,12 @@ version: 0.2.5
 contributes:
   format:
     pdf:
+      # pdf-engine: LuaTeX
+      # latex-auto-install: false
       documentclass: MastersDoctoralThesis
-      classoption: ["11pt", "english", "spanish", "singlespacing", "headsepline"]
+      classoption: ["11pt", "spanish", "singlespacing", "headsepline"]
+      babel-lang: spanish
+      keep-tex: true
       format-resources:
         - MastersDoctoralThesis.cls
       template-partials: 
@@ -26,9 +30,12 @@ contributes:
         - top=1.5cm
         - bottom=1.5cm
       colorlinks: true
-      citecolor: magenta
+      citecolor: black
       linkcolor: blue
       urlcolor: red
-      toclinkcolor: black
+      toclinkcolor: magenta
+      cite-method: biblatex
+      biblatexoptions: backend=biber, style=apa, natbib=true
+     
       
       
